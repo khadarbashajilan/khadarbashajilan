@@ -1,5 +1,5 @@
 # Hi there, I'm Khadar! 👋
-I'm an Aspiring Frontend Developer passionate about crafting beautiful and responsive web applications. I specialize in HTML, CSS, JavaScript, and React.js, with a keen interest in web animations using GSAP and Framer Motion.
+I'm an Aspiring Frontend Developer passionate about crafting beautiful and responsive web applications. I specialize in HTML, CSS, JavaScript, and React.js.
 
 ## 🌐 Socials: 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/khadarbashajilan)  [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:khadarbashajilan001@gmail.com) 
