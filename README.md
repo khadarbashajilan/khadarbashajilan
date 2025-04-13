@@ -1,4 +1,4 @@
-# Hi there, I'm Khadar Basha Jilan! 👋
+# Hi there, I'm Khadar! 👋
 I'm an Aspiring Frontend Developer passionate about crafting beautiful and responsive web applications. I specialize in HTML, CSS, JavaScript, and React.js, with a keen interest in web animations using GSAP and Framer Motion.
 
 ## 🌐 Socials: 
