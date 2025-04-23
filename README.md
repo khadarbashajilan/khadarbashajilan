@@ -9,6 +9,6 @@ I'm an Aspiring Frontend Developer passionate about crafting beautiful and respo
 
 # 📊 GitHub Stats:
 ![](https://github-readme-stats.vercel.app/api/top-langs/?username=khadarbashajilan&theme=blue_navy&hide_border=false&include_all_commits=false&count_private=false&layout=compact)<br/><br/>
-![](https://github-readme-stats.vercel.app/api?username=khadarbashajilan&theme=grey_navy&hide_border=false&include_all_commits=false&count_private=false&v=1)<br/><br/>
+![](https://github-readme-stats.vercel.app/api?username=khadarbashajilan&theme=grey&hide_border=false&include_all_commits=false&count_private=false&v=1)<br/><br/>
 ![](https://nirzak-streak-stats.vercel.app/?user=khadarbashajilan&theme=blue_navy&hide_border=false&v=1)<br/>
 [![](https://visitcount.itsvg.in/api?id=khadarbashajilan&icon=0&color=0)](https://visitcount.itsvg.in)
