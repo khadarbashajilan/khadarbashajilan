@@ -59,17 +59,18 @@ I'm actively seeking opportunities to contribute to meaningful projects. Whether
 📧 **Ready to build something amazing together?**  
 [Send me an email](mailto:khadarbashajilan001@gmail.com) | [Connect on LinkedIn](https://linkedin.com/in/khadarbashajilan) | [View Portfolio](http://portfolio-khadarbashajilans-projects.vercel.app/)
 
----
-
-# 📊 GitHub Stats:
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=khadarbashajilan&theme=blue_navy&hide_border=false&include_all_commits=false&count_private=false&layout=compact)<br/><br/>
-![](https://nirzak-streak-stats.vercel.app/?user=khadarbashajilan&theme=blue_navy&hide_border=false&v=1)<br/>
-[![](https://visitcount.itsvg.in/api?id=khadarbashajilan&icon=0&color=0)](https://visitcount.itsvg.in)
-
----
-
 ### 💡 Beyond Code
 *Exploring developer tools, optimizing workflows, and continuously learning emerging technologies.*  
 *Always open to sharing knowledge and growing with the community.*
 
 ---
+
+## 📊 GitHub Stats
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=khadarbashajilan&theme=blue_navy&hide_border=false&include_all_commits=false&count_private=false&layout=compact" alt="Top Languages" />
+  <br/><br/>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=khadarbashajilan&theme=blue_navy&hide_border=false" alt="GitHub Streak" />
+  <br/><br/>
+  <img src="https://visitcount.itsvg.in/api?id=khadarbashajilan&icon=0&color=0" alt="Profile Views" />
+</p>
