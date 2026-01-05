@@ -64,6 +64,3 @@ I'm actively seeking opportunities to contribute to meaningful projects. Whether
 *Always open to sharing knowledge and growing with the community.*
 
 ---
-## GitHub Stats
-
-![Stats](https://github-readme-stats.vercel.app/api?username=khadarbashajilan)
