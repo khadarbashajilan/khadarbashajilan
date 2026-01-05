@@ -60,6 +60,14 @@ I'm actively seeking opportunities to contribute to meaningful projects. Whether
 [Send me an email](mailto:khadarbashajilan001@gmail.com) | [Connect on LinkedIn](https://linkedin.com/in/khadarbashajilan) | [View Portfolio](http://portfolio-khadarbashajilans-projects.vercel.app/)
 
 ---
+
+# 📊 GitHub Stats:
+![](https://github-readme-stats.vercel.app/api/top-langs/?username=khadarbashajilan&theme=blue_navy&hide_border=false&include_all_commits=false&count_private=false&layout=compact)<br/><br/>
+![](https://nirzak-streak-stats.vercel.app/?user=khadarbashajilan&theme=blue_navy&hide_border=false&v=1)<br/>
+[![](https://visitcount.itsvg.in/api?id=khadarbashajilan&icon=0&color=0)](https://visitcount.itsvg.in)
+
+---
+
 ### 💡 Beyond Code
 *Exploring developer tools, optimizing workflows, and continuously learning emerging technologies.*  
 *Always open to sharing knowledge and growing with the community.*
