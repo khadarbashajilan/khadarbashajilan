@@ -64,13 +64,6 @@ I'm actively seeking opportunities to contribute to meaningful projects. Whether
 *Always open to sharing knowledge and growing with the community.*
 
 ---
+## GitHub Stats
 
-## 📊 GitHub Stats
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=khadarbashajilan&theme=blue_navy&hide_border=false&include_all_commits=false&count_private=false&layout=compact" alt="Top Languages" />
-  <br/><br/>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=khadarbashajilan&theme=blue_navy&hide_border=false" alt="GitHub Streak" />
-  <br/><br/>
-  <img src="https://visitcount.itsvg.in/api?id=khadarbashajilan&icon=0&color=0" alt="Profile Views" />
-</p>
+![Stats](https://github-readme-stats.vercel.app/api?username=khadarbashajilan)
