@@ -9,21 +9,32 @@ on:
 permissions:
   contents: write
 
+# Prevent overlapping workflow runs
+concurrency:
+  group: update-readme-cards-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v6
+      - name: Checkout repository
+        uses: actions/checkout@v6
 
-      # Generate GitHub's actual contribution calendar
+      # ==========================================
+      # CONTRIBUTION CALENDAR (MIDNIGHT BLUE)
+      # ==========================================
       - name: Generate contribution calendar
         env:
           STATS_TOKEN: ${{ secrets.STATS_TOKEN }}
           GITHUB_USERNAME: ${{ github.repository_owner }}
-        run: python3 .github/scripts/generate_contribution_calendar.py
+        run: |
+          python3 .github/scripts/generate_contribution_calendar.py
 
-      # Streak card - dark
+      # ==========================================
+      # CONTRIBUTION STREAK - DARK
+      # ==========================================
       - name: Streak card (dark)
         uses: DenverCoder1/github-readme-streak-stats@v1
         with:
@@ -31,7 +42,9 @@ jobs:
           path: profile/streak-dark.svg
           token: ${{ secrets.STATS_TOKEN }}
 
-      # Streak card - light
+      # ==========================================
+      # CONTRIBUTION STREAK - LIGHT
+      # ==========================================
       - name: Streak card (light)
         uses: DenverCoder1/github-readme-streak-stats@v1
         with:
@@ -39,7 +52,9 @@ jobs:
           path: profile/streak.svg
           token: ${{ secrets.STATS_TOKEN }}
 
-      # Languages card - dark
+      # ==========================================
+      # TOP LANGUAGES - DARK
+      # ==========================================
       - name: Languages card (dark)
         uses: stats-organization/github-readme-stats-action@v2
         with:
@@ -49,7 +64,9 @@ jobs:
           token: ${{ secrets.STATS_TOKEN }}
           fail_on_error: true
 
-      # Languages card - light
+      # ==========================================
+      # TOP LANGUAGES - LIGHT
+      # ==========================================
       - name: Languages card (light)
         uses: stats-organization/github-readme-stats-action@v2
         with:
@@ -59,12 +76,26 @@ jobs:
           token: ${{ secrets.STATS_TOKEN }}
           fail_on_error: true
 
-      # Commit generated SVGs
+      # ==========================================
+      # COMMIT GENERATED CARDS SAFELY
+      # ==========================================
       - name: Commit cards
+        env:
+          BRANCH_NAME: ${{ github.ref_name }}
         run: |
+          set -e
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
+          # Fetch the latest remote branch
+          git fetch origin "$BRANCH_NAME"
+
+          # Move HEAD to latest remote commit.
+          # Keep generated SVG changes in the working tree.
+          git reset --mixed "origin/$BRANCH_NAME"
+
+          # Stage only generated cards
           git add profile/*.svg
 
           if git diff --cached --quiet; then
@@ -73,4 +104,6 @@ jobs:
           fi
 
           git commit -m "Update README cards"
-          git push
+
+          # Push updated cards
+          git push origin "HEAD:$BRANCH_NAME"
