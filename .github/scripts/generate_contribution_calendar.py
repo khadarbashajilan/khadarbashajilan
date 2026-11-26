@@ -5,21 +5,39 @@ import json
 import math
 import os
 import pathlib
-import urllib.request
+import sys
+import time
 import urllib.error
+import urllib.request
+
 
 # ============================================================
 # CONFIGURATION
 # ============================================================
 
-TOKEN = os.environ["STATS_TOKEN"]
-USERNAME = os.environ["GITHUB_USERNAME"]
+def required_env(name):
+    value = os.environ.get(name)
 
-today = dt.datetime.now(dt.timezone.utc).date()
-start_date = today - dt.timedelta(days=30)
+    if not value or not value.strip():
+        raise RuntimeError(
+            f"Missing required environment variable: {name}"
+        )
 
-OUTPUT = pathlib.Path("profile")
-OUTPUT.mkdir(exist_ok=True)
+    return value.strip()
+
+
+TOKEN = required_env("STATS_TOKEN")
+USERNAME = required_env("GITHUB_USERNAME")
+
+SCRIPT_DIR = pathlib.Path(__file__).resolve().parent
+REPO_ROOT = SCRIPT_DIR.parent.parent
+
+OUTPUT = REPO_ROOT / "profile"
+OUTPUT.mkdir(parents=True, exist_ok=True)
+
+UTC_NOW = dt.datetime.now(dt.timezone.utc)
+TODAY = UTC_NOW.date()
+START_DATE = TODAY - dt.timedelta(days=30)
 
 WIDTH = 960
 HEIGHT = 280
@@ -32,8 +50,16 @@ BOTTOM = 238
 CHART_WIDTH = WIDTH - LEFT - RIGHT
 CHART_HEIGHT = BOTTOM - TOP
 
+API_URL = "https://api.github.com/graphql"
+
+MAX_RETRIES = 5
+RETRYABLE_HTTP_CODES = {
+    429, 500, 502, 503, 504
+}
+
+
 # ============================================================
-# MIDNIGHT BLUE THEMES
+# THEMES
 # ============================================================
 
 DARK = {
@@ -48,8 +74,9 @@ LIGHT = {
     "point": "#0969da",
 }
 
+
 # ============================================================
-# GITHUB GRAPHQL API
+# GITHUB GRAPHQL
 # ============================================================
 
 QUERY = """
@@ -70,105 +97,194 @@ query($login: String!, $from: DateTime!, $to: DateTime!) {
 }
 """
 
-payload = {
-    "query": QUERY,
-    "variables": {
-        "login": USERNAME,
-        "from": f"{start_date.isoformat()}T00:00:00Z",
-        "to": f"{today.isoformat()}T23:59:59Z",
-    },
-}
 
-request = urllib.request.Request(
-    "https://api.github.com/graphql",
-    data=json.dumps(payload).encode("utf-8"),
-    headers={
-        "Authorization": f"Bearer {TOKEN}",
-        "Content-Type": "application/json",
-        "Accept": "application/vnd.github+json",
-        "User-Agent": "GitHub-Activity-Graph",
-    },
-    method="POST",
-)
+def fetch_contributions():
 
-try:
-    with urllib.request.urlopen(request, timeout=30) as response:
-        result = json.loads(response.read())
+    payload = {
+        "query": QUERY,
+        "variables": {
+            "login": USERNAME,
+            "from": (
+                f"{START_DATE.isoformat()}T00:00:00Z"
+            ),
+            "to": UTC_NOW.isoformat(
+                timespec="seconds"
+            ).replace("+00:00", "Z"),
+        },
+    }
 
-except urllib.error.HTTPError as error:
-    raise RuntimeError(
-        f"GitHub API error {error.code}: "
-        f"{error.read().decode()}"
-    ) from error
+    body = json.dumps(payload).encode("utf-8")
 
-except urllib.error.URLError as error:
-    raise RuntimeError(
-        f"GitHub API connection failed: {error}"
-    ) from error
-
-if result.get("errors"):
-    raise RuntimeError(
-        f"GitHub GraphQL error: {result['errors']}"
+    request = urllib.request.Request(
+        API_URL,
+        data=body,
+        headers={
+            "Authorization": f"Bearer {TOKEN}",
+            "Content-Type": "application/json",
+            "Accept": "application/vnd.github+json",
+            "User-Agent": "GitHub-Activity-Graph",
+        },
+        method="POST",
     )
 
-user = result["data"]["user"]
+    for attempt in range(1, MAX_RETRIES + 1):
 
-if not user:
-    raise RuntimeError(f"GitHub user not found: {USERNAME}")
+        try:
+            with urllib.request.urlopen(
+                request,
+                timeout=30,
+            ) as response:
 
-collection = user["contributionsCollection"]
+                result = json.loads(
+                    response.read().decode("utf-8")
+                )
+
+            if result.get("errors"):
+                raise RuntimeError(
+                    "GitHub GraphQL errors: "
+                    + json.dumps(result["errors"])
+                )
+
+            data = result.get("data")
+
+            if not data or not data.get("user"):
+                raise RuntimeError(
+                    f"GitHub user not found: {USERNAME}"
+                )
+
+            return data["user"]["contributionsCollection"]
+
+        except urllib.error.HTTPError as error:
+
+            if error.code not in RETRYABLE_HTTP_CODES:
+                raise RuntimeError(
+                    f"GitHub API HTTP {error.code}: "
+                    f"{error.read().decode(errors='replace')}"
+                ) from error
+
+            if attempt == MAX_RETRIES:
+                raise RuntimeError(
+                    "GitHub API retries exhausted."
+                ) from error
+
+            retry_after = error.headers.get("Retry-After")
+
+            try:
+                delay = float(retry_after)
+            except (TypeError, ValueError):
+                delay = min(2 ** attempt, 30)
+
+            print(
+                f"GitHub API returned HTTP {error.code}. "
+                f"Retrying in {delay}s "
+                f"({attempt}/{MAX_RETRIES})..."
+            )
+
+            time.sleep(delay)
+
+        except urllib.error.URLError as error:
+
+            if attempt == MAX_RETRIES:
+                raise RuntimeError(
+                    "GitHub API connection retries exhausted."
+                ) from error
+
+            delay = min(2 ** attempt, 30)
+
+            print(
+                f"GitHub API connection failed: {error}. "
+                f"Retrying in {delay}s..."
+            )
+
+            time.sleep(delay)
+
+        except TimeoutError as error:
+
+            if attempt == MAX_RETRIES:
+                raise RuntimeError(
+                    "GitHub API timed out after retries."
+                ) from error
+
+            time.sleep(min(2 ** attempt, 30))
+
+    raise RuntimeError("Unable to retrieve GitHub contributions.")
+
+
+# ============================================================
+# EXTRACT CONTRIBUTIONS
+# ============================================================
+
+collection = fetch_contributions()
+
 calendar = collection["contributionCalendar"]
 
-restricted_count = collection["restrictedContributionsCount"]
-
-print(f"Private/restricted contributions: {restricted_count}")
-
-# ============================================================
-# EXTRACT DAILY CONTRIBUTIONS
-# ============================================================
+restricted_count = collection[
+    "restrictedContributionsCount"
+]
 
 daily = {}
 
 for week in calendar["weeks"]:
     for item in week["contributionDays"]:
+
         date = dt.date.fromisoformat(item["date"])
+
         daily[date] = item["contributionCount"]
 
-# Exactly 31 days
-dates = [
-    start_date + dt.timedelta(days=i)
+
+# Exactly 31 calendar days.
+
+DATES = [
+    START_DATE + dt.timedelta(days=i)
     for i in range(31)
 ]
 
-counts = [
+COUNTS = [
     daily.get(date, 0)
-    for date in dates
+    for date in DATES
 ]
 
-peak = max(counts, default=0)
+PEAK = max(COUNTS, default=0)
+TOTAL = sum(COUNTS)
+
 
 # ============================================================
 # GRAPH COORDINATES
 # ============================================================
 
-scale = max(4, math.ceil(peak / 4) * 4)
+SCALE = max(
+    4,
+    math.ceil(PEAK / 4) * 4
+)
+
 
 def get_x(index):
-    return LEFT + (index / 30) * CHART_WIDTH
+    return (
+        LEFT
+        + (index / 30) * CHART_WIDTH
+    )
 
 
 def get_y(value):
-    return BOTTOM - (value / scale) * CHART_HEIGHT
+    return (
+        BOTTOM
+        - (value / SCALE) * CHART_HEIGHT
+    )
 
 
-points = [
-    (get_x(i), get_y(count))
-    for i, count in enumerate(counts)
+POINTS = [
+    (get_x(index), get_y(count))
+    for index, count in enumerate(COUNTS)
 ]
 
+
 # ============================================================
-# SMOOTH CURVE
+# BOUNDED MONOTONE SMOOTH CURVE
 # ============================================================
+
+def clamp(value, minimum, maximum):
+    return max(minimum, min(value, maximum))
+
 
 def smooth_path(points):
 
@@ -180,45 +296,80 @@ def smooth_path(points):
         f"{points[0][1]:.2f}"
     )
 
-    for i in range(len(points) - 1):
+    for index in range(len(points) - 1):
 
-        p0 = points[max(0, i - 1)]
-        p1 = points[i]
-        p2 = points[i + 1]
-        p3 = points[min(len(points) - 1, i + 2)]
+        p0 = points[max(0, index - 1)]
+        p1 = points[index]
+        p2 = points[index + 1]
+        p3 = points[min(len(points) - 1, index + 2)]
 
-        cp1 = (
-            p1[0] + (p2[0] - p0[0]) / 6,
-            p1[1] + (p2[1] - p0[1]) / 6,
+        # Catmull-Rom control points.
+        cp1_x = p1[0] + (p2[0] - p0[0]) / 6
+        cp2_x = p2[0] - (p3[0] - p1[0]) / 6
+
+        cp1_y = p1[1] + (p2[1] - p0[1]) / 6
+        cp2_y = p2[1] - (p3[1] - p1[1]) / 6
+
+        # Keep control points inside the segment's
+        # Y range, preventing overshoot.
+        segment_min = max(
+            TOP,
+            min(p1[1], p2[1])
         )
 
-        cp2 = (
-            p2[0] - (p3[0] - p1[0]) / 6,
-            p2[1] - (p3[1] - p1[1]) / 6,
+        segment_max = min(
+            BOTTOM,
+            max(p1[1], p2[1])
+        )
+
+        cp1_y = clamp(
+            cp1_y,
+            segment_min,
+            segment_max
+        )
+
+        cp2_y = clamp(
+            cp2_y,
+            segment_min,
+            segment_max
+        )
+
+        # Keep X coordinates inside chart bounds.
+        cp1_x = clamp(
+            cp1_x,
+            LEFT,
+            WIDTH - RIGHT
+        )
+
+        cp2_x = clamp(
+            cp2_x,
+            LEFT,
+            WIDTH - RIGHT
         )
 
         path += (
-            f" C {cp1[0]:.2f} {cp1[1]:.2f},"
-            f" {cp2[0]:.2f} {cp2[1]:.2f},"
+            f" C {cp1_x:.2f} {cp1_y:.2f},"
+            f" {cp2_x:.2f} {cp2_y:.2f},"
             f" {p2[0]:.2f} {p2[1]:.2f}"
         )
 
     return path
 
 
-line_path = smooth_path(points)
+LINE_PATH = smooth_path(POINTS)
 
-area_path = (
-    line_path
-    + f" L {points[-1][0]:.2f} {BOTTOM}"
-    + f" L {points[0][0]:.2f} {BOTTOM} Z"
+AREA_PATH = (
+    LINE_PATH
+    + f" L {POINTS[-1][0]:.2f} {BOTTOM}"
+    + f" L {POINTS[0][0]:.2f} {BOTTOM} Z"
 )
 
+
 # ============================================================
-# GENERATE SVG
+# SVG GENERATOR
 # ============================================================
 
-def generate(theme, filename):
+def generate_svg(theme, filename):
 
     svg = []
 
@@ -228,7 +379,7 @@ def generate(theme, filename):
         f'viewBox="0 0 {WIDTH} {HEIGHT}">'
     )
 
-    # Gradient
+    # Gradient.
     svg.append(
         f'<defs>'
         f'<linearGradient id="areaGradient" '
@@ -243,22 +394,22 @@ def generate(theme, filename):
         f'</defs>'
     )
 
-    # Background
+    # Background.
     svg.append(
         f'<rect width="100%" height="100%" '
         f'rx="12" fill="{theme["bg"]}"/>'
     )
 
-    # Gradient area
+    # Gradient area.
     svg.append(
-        f'<path d="{area_path}" '
+        f'<path d="{AREA_PATH}" '
         f'fill="url(#areaGradient)" '
         f'stroke="none"/>'
     )
 
-    # Smooth activity line
+    # Smooth line.
     svg.append(
-        f'<path d="{line_path}" '
+        f'<path d="{LINE_PATH}" '
         f'fill="none" '
         f'stroke="{theme["line"]}" '
         f'stroke-width="2.5" '
@@ -267,82 +418,83 @@ def generate(theme, filename):
     )
 
     # ========================================================
-    # INTERACTIVE DATA POINTS
+    # DATA POINTS AND HOVER METADATA
     # ========================================================
 
     for index, (date, count, point) in enumerate(
-        zip(dates, counts, points)
+        zip(DATES, COUNTS, POINTS)
     ):
 
         x, y = point
 
-        date_text = date.strftime("%d %b %Y")
-
-        # Actual data coordinates:
-        # X = day index (0 to 30)
-        # Y = contribution count
-
         tooltip = (
-            f"Date: {date_text}\n"
-            f"Contributions: {count}\n"
-            f"X coordinate: {index}\n"
-            f"Y coordinate: {count}\n"
-            f"SVG X: {x:.2f} viewBox units\n"
-            f"SVG Y: {y:.2f} viewBox units"
+            f"Date: {date.strftime('%d %b %Y')} | "
+            f"Contributions: {count} | "
+            f"X: {index} | "
+            f"Y: {count} | "
+            f"SVG X: {x:.2f} | "
+            f"SVG Y: {y:.2f}"
         )
 
         escaped_tooltip = html.escape(tooltip)
 
-        # Invisible hover target with a 22-unit diameter
-        # The SVG title is displayed as a native tooltip.
+        # Invisible hover area.
         svg.append(
             f'<circle cx="{x:.2f}" cy="{y:.2f}" '
-            f'r="11" fill="#ffffff" fill-opacity="0" '
+            f'r="11" fill="#ffffff" '
+            f'fill-opacity="0" '
             f'pointer-events="all">'
             f'<title>{escaped_tooltip}</title>'
             f'</circle>'
         )
 
-        # Visible point
+        # Visible point.
         svg.append(
             f'<circle cx="{x:.2f}" cy="{y:.2f}" '
             f'r="2.5" fill="{theme["point"]}" '
             f'pointer-events="none"/>'
         )
 
-    # No title, labels, axes, legend or footer.
+    # No headings, axes, labels, or footer.
     svg.append("</svg>")
 
     output_path = OUTPUT / filename
 
     output_path.write_text(
         "\n".join(svg),
-        encoding="utf-8",
+        encoding="utf-8"
     )
 
     print(f"Generated: {output_path}")
 
 
 # ============================================================
-# DARK AND LIGHT GRAPHS
+# GENERATE BOTH THEMES
 # ============================================================
 
-generate(DARK, "contributions-dark.svg")
-generate(LIGHT, "contributions-light.svg")
+generate_svg(
+    DARK,
+    "contributions-dark.svg"
+)
+
+generate_svg(
+    LIGHT,
+    "contributions-light.svg"
+)
+
 
 # ============================================================
 # SUMMARY
 # ============================================================
 
 print("--------------------------------------")
-print("ACTIVITY GRAPH GENERATED")
+print("GITHUB ACTIVITY GRAPH UPDATED")
 print("--------------------------------------")
 print(f"Username: {USERNAME}")
-print(f"Period: {start_date} to {today}")
+print(f"Period: {START_DATE} to {TODAY}")
 print(f"Days: 31")
-print(f"Contributions: {sum(counts)}")
-print(f"Peak/day: {peak}")
+print(f"Total contributions: {TOTAL}")
+print(f"Peak per day: {PEAK}")
 print(f"Restricted contributions: {restricted_count}")
-print("Theme: Midnight Blue")
-print("Hover: Date, count, X/Y and SVG position")
+print(f"Output directory: {OUTPUT}")
 print("--------------------------------------")
