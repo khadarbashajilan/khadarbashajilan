@@ -1,0 +1,76 @@
+
+name: Update README cards
+
+on:
+  schedule:
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+
+      # Generate GitHub's actual contribution calendar
+      - name: Generate contribution calendar
+        env:
+          STATS_TOKEN: ${{ secrets.STATS_TOKEN }}
+          GITHUB_USERNAME: ${{ github.repository_owner }}
+        run: python3 .github/scripts/generate_contribution_calendar.py
+
+      # Streak card - dark
+      - name: Streak card (dark)
+        uses: DenverCoder1/github-readme-streak-stats@v1
+        with:
+          options: "user=${{ github.repository_owner }}&theme=react&hide_border=true&background=0D1117&stroke=21262D&ring=58A6FF&fire=58A6FF&currStreakNum=F0F6FC&sideNums=C9D1D9&currStreakLabel=8B949E&sideLabels=8B949E&dates=6E7681&border_radius=12"
+          path: profile/streak-dark.svg
+          token: ${{ secrets.STATS_TOKEN }}
+
+      # Streak card - light
+      - name: Streak card (light)
+        uses: DenverCoder1/github-readme-streak-stats@v1
+        with:
+          options: "user=${{ github.repository_owner }}&theme=default&hide_border=true&border_radius=12&ring=0969DA&fire=0969DA&currStreakLabel=57606A"
+          path: profile/streak.svg
+          token: ${{ secrets.STATS_TOKEN }}
+
+      # Languages card - dark
+      - name: Languages card (dark)
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: top-langs
+          options: "username=${{ github.repository_owner }}&layout=compact&theme=react&hide_border=true&hide_title=true&langs_count=20&bg_color=0d1117&text_color=c9d1d9&border_radius=12&card_width=495"
+          path: profile/top-langs-dark.svg
+          token: ${{ secrets.STATS_TOKEN }}
+          fail_on_error: true
+
+      # Languages card - light
+      - name: Languages card (light)
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: top-langs
+          options: "username=${{ github.repository_owner }}&layout=compact&theme=default&hide_border=true&hide_title=true&langs_count=20&border_radius=12&card_width=495"
+          path: profile/top-langs.svg
+          token: ${{ secrets.STATS_TOKEN }}
+          fail_on_error: true
+
+      # Commit generated SVGs
+      - name: Commit cards
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add profile/*.svg
+
+          if git diff --cached --quiet; then
+            echo "No changes to README cards"
+            exit 0
+          fi
+
+          git commit -m "Update README cards"
+          git push
