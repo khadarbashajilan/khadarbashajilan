@@ -1,33 +1,223 @@
-<svg xmlns="http://www.w3.org/2000/svg"
-     width="960"
-     height="280"
-     viewBox="0 0 960 280">
-
-  <defs>
-    <linearGradient id="area"
-                    x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%"
-            stop-color="#0969da"
-            stop-opacity="0.38"/>
-      <stop offset="100%"
-            stop-color="#0969da"
-            stop-opacity="0.01"/>
-    </linearGradient>
-  </defs>
-
-  <rect width="100%" height="100%"
-        fill="#ffffff" rx="12"/>
-
-  <path d="M 12.00 174.44 C 17.20 185.03, 32.80 240.35, 43.20 238.00 C 53.60 235.65, 64.00 177.97, 74.40 160.31 C 84.80 142.66, 95.20 119.11, 105.60 132.06 C 116.00 145.01, 126.40 220.34, 136.80 238.00 C 147.20 255.66, 157.60 245.06, 168.00 238.00 C 178.40 230.94, 188.80 207.40, 199.20 195.62 C 209.60 183.85, 220.00 162.67, 230.40 167.38 C 240.80 172.08, 251.20 225.05, 261.60 223.88 C 272.00 222.70, 282.40 169.73, 292.80 160.31 C 303.20 150.90, 313.60 154.43, 324.00 167.38 C 334.40 180.32, 344.80 243.89, 355.20 238.00 C 365.60 232.11, 376.00 142.66, 386.40 132.06 C 396.80 121.47, 407.20 172.08, 417.60 174.44 C 428.00 176.79, 438.40 154.43, 448.80 146.19 C 459.20 137.95, 469.60 113.23, 480.00 125.00 C 490.40 136.77, 500.80 197.98, 511.20 216.81 C 521.60 235.65, 532.00 235.65, 542.40 238.00 C 552.80 240.35, 563.20 230.94, 573.60 230.94 C 584.00 230.94, 594.40 239.18, 604.80 238.00 C 615.20 236.82, 625.60 227.41, 636.00 223.88 C 646.40 220.34, 656.80 214.46, 667.20 216.81 C 677.60 219.17, 688.00 234.47, 698.40 238.00 C 708.80 241.53, 719.20 243.89, 729.60 238.00 C 740.00 232.11, 750.40 213.28, 760.80 202.69 C 771.20 192.09, 781.60 168.55, 792.00 174.44 C 802.40 180.32, 812.80 229.76, 823.20 238.00 C 833.60 246.24, 844.00 261.54, 854.40 223.88 C 864.80 186.21, 875.20 15.53, 885.60 12.00 C 896.00 8.47, 906.40 181.50, 916.80 202.69 C 927.20 223.88, 942.80 149.72, 948.00 139.12 L 948.00 238 L 12.00 238 Z"
-        fill="url(#area)"/>
-
-  <path d="M 12.00 174.44 C 17.20 185.03, 32.80 240.35, 43.20 238.00 C 53.60 235.65, 64.00 177.97, 74.40 160.31 C 84.80 142.66, 95.20 119.11, 105.60 132.06 C 116.00 145.01, 126.40 220.34, 136.80 238.00 C 147.20 255.66, 157.60 245.06, 168.00 238.00 C 178.40 230.94, 188.80 207.40, 199.20 195.62 C 209.60 183.85, 220.00 162.67, 230.40 167.38 C 240.80 172.08, 251.20 225.05, 261.60 223.88 C 272.00 222.70, 282.40 169.73, 292.80 160.31 C 303.20 150.90, 313.60 154.43, 324.00 167.38 C 334.40 180.32, 344.80 243.89, 355.20 238.00 C 365.60 232.11, 376.00 142.66, 386.40 132.06 C 396.80 121.47, 407.20 172.08, 417.60 174.44 C 428.00 176.79, 438.40 154.43, 448.80 146.19 C 459.20 137.95, 469.60 113.23, 480.00 125.00 C 490.40 136.77, 500.80 197.98, 511.20 216.81 C 521.60 235.65, 532.00 235.65, 542.40 238.00 C 552.80 240.35, 563.20 230.94, 573.60 230.94 C 584.00 230.94, 594.40 239.18, 604.80 238.00 C 615.20 236.82, 625.60 227.41, 636.00 223.88 C 646.40 220.34, 656.80 214.46, 667.20 216.81 C 677.60 219.17, 688.00 234.47, 698.40 238.00 C 708.80 241.53, 719.20 243.89, 729.60 238.00 C 740.00 232.11, 750.40 213.28, 760.80 202.69 C 771.20 192.09, 781.60 168.55, 792.00 174.44 C 802.40 180.32, 812.80 229.76, 823.20 238.00 C 833.60 246.24, 844.00 261.54, 854.40 223.88 C 864.80 186.21, 875.20 15.53, 885.60 12.00 C 896.00 8.47, 906.40 181.50, 916.80 202.69 C 927.20 223.88, 942.80 149.72, 948.00 139.12"
-        fill="none"
-        stroke="#0969da"
-        stroke-width="2.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"/>
-
-  <circle cx="12.00" cy="174.44" r="2.5" fill="#0969da"><title>2026-10-27: 9 contributions</title></circle><circle cx="43.20" cy="238.00" r="2.5" fill="#0969da"><title>2026-10-28: 0 contributions</title></circle><circle cx="74.40" cy="160.31" r="2.5" fill="#0969da"><title>2026-10-29: 11 contributions</title></circle><circle cx="105.60" cy="132.06" r="2.5" fill="#0969da"><title>2026-10-30: 15 contributions</title></circle><circle cx="136.80" cy="238.00" r="2.5" fill="#0969da"><title>2026-10-31: 0 contributions</title></circle><circle cx="168.00" cy="238.00" r="2.5" fill="#0969da"><title>2026-11-01: 0 contributions</title></circle><circle cx="199.20" cy="195.62" r="2.5" fill="#0969da"><title>2026-11-02: 6 contributions</title></circle><circle cx="230.40" cy="167.38" r="2.5" fill="#0969da"><title>2026-11-03: 10 contributions</title></circle><circle cx="261.60" cy="223.88" r="2.5" fill="#0969da"><title>2026-11-04: 2 contributions</title></circle><circle cx="292.80" cy="160.31" r="2.5" fill="#0969da"><title>2026-11-05: 11 contributions</title></circle><circle cx="324.00" cy="167.38" r="2.5" fill="#0969da"><title>2026-11-06: 10 contributions</title></circle><circle cx="355.20" cy="238.00" r="2.5" fill="#0969da"><title>2026-11-07: 0 contributions</title></circle><circle cx="386.40" cy="132.06" r="2.5" fill="#0969da"><title>2026-11-08: 15 contributions</title></circle><circle cx="417.60" cy="174.44" r="2.5" fill="#0969da"><title>2026-11-09: 9 contributions</title></circle><circle cx="448.80" cy="146.19" r="2.5" fill="#0969da"><title>2026-11-10: 13 contributions</title></circle><circle cx="480.00" cy="125.00" r="2.5" fill="#0969da"><title>2026-11-11: 16 contributions</title></circle><circle cx="511.20" cy="216.81" r="2.5" fill="#0969da"><title>2026-11-12: 3 contributions</title></circle><circle cx="542.40" cy="238.00" r="2.5" fill="#0969da"><title>2026-11-13: 0 contributions</title></circle><circle cx="573.60" cy="230.94" r="2.5" fill="#0969da"><title>2026-11-14: 1 contributions</title></circle><circle cx="604.80" cy="238.00" r="2.5" fill="#0969da"><title>2026-11-15: 0 contributions</title></circle><circle cx="636.00" cy="223.88" r="2.5" fill="#0969da"><title>2026-11-16: 2 contributions</title></circle><circle cx="667.20" cy="216.81" r="2.5" fill="#0969da"><title>2026-11-17: 3 contributions</title></circle><circle cx="698.40" cy="238.00" r="2.5" fill="#0969da"><title>2026-11-18: 0 contributions</title></circle><circle cx="729.60" cy="238.00" r="2.5" fill="#0969da"><title>2026-11-19: 0 contributions</title></circle><circle cx="760.80" cy="202.69" r="2.5" fill="#0969da"><title>2026-11-20: 5 contributions</title></circle><circle cx="792.00" cy="174.44" r="2.5" fill="#0969da"><title>2026-11-21: 9 contributions</title></circle><circle cx="823.20" cy="238.00" r="2.5" fill="#0969da"><title>2026-11-22: 0 contributions</title></circle><circle cx="854.40" cy="223.88" r="2.5" fill="#0969da"><title>2026-11-23: 2 contributions</title></circle><circle cx="885.60" cy="12.00" r="2.5" fill="#0969da"><title>2026-11-24: 32 contributions</title></circle><circle cx="916.80" cy="202.69" r="2.5" fill="#0969da"><title>2026-11-25: 5 contributions</title></circle><circle cx="948.00" cy="139.12" r="2.5" fill="#0969da"><title>2026-11-26: 14 contributions</title></circle>
-
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="280" viewBox="0 0 960 280">
+<defs><linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0969da" stop-opacity="0.38"/><stop offset="100%" stop-color="#0969da" stop-opacity="0.01"/></linearGradient></defs>
+<rect width="100%" height="100%" rx="12" fill="#ffffff"/>
+<path d="M 12.00 174.44 C 17.20 185.03, 32.80 240.35, 43.20 238.00 C 53.60 235.65, 64.00 177.97, 74.40 160.31 C 84.80 142.66, 95.20 119.11, 105.60 132.06 C 116.00 145.01, 126.40 220.34, 136.80 238.00 C 147.20 255.66, 157.60 245.06, 168.00 238.00 C 178.40 230.94, 188.80 207.40, 199.20 195.62 C 209.60 183.85, 220.00 162.67, 230.40 167.38 C 240.80 172.08, 251.20 225.05, 261.60 223.88 C 272.00 222.70, 282.40 169.73, 292.80 160.31 C 303.20 150.90, 313.60 154.43, 324.00 167.38 C 334.40 180.32, 344.80 243.89, 355.20 238.00 C 365.60 232.11, 376.00 142.66, 386.40 132.06 C 396.80 121.47, 407.20 172.08, 417.60 174.44 C 428.00 176.79, 438.40 154.43, 448.80 146.19 C 459.20 137.95, 469.60 113.23, 480.00 125.00 C 490.40 136.77, 500.80 197.98, 511.20 216.81 C 521.60 235.65, 532.00 235.65, 542.40 238.00 C 552.80 240.35, 563.20 230.94, 573.60 230.94 C 584.00 230.94, 594.40 239.18, 604.80 238.00 C 615.20 236.82, 625.60 227.41, 636.00 223.88 C 646.40 220.34, 656.80 214.46, 667.20 216.81 C 677.60 219.17, 688.00 234.47, 698.40 238.00 C 708.80 241.53, 719.20 243.89, 729.60 238.00 C 740.00 232.11, 750.40 213.28, 760.80 202.69 C 771.20 192.09, 781.60 168.55, 792.00 174.44 C 802.40 180.32, 812.80 229.76, 823.20 238.00 C 833.60 246.24, 844.00 261.54, 854.40 223.88 C 864.80 186.21, 875.20 15.53, 885.60 12.00 C 896.00 8.47, 906.40 182.68, 916.80 202.69 C 927.20 222.70, 942.80 143.83, 948.00 132.06 L 948.00 238 L 12.00 238 Z" fill="url(#areaGradient)" stroke="none"/>
+<path d="M 12.00 174.44 C 17.20 185.03, 32.80 240.35, 43.20 238.00 C 53.60 235.65, 64.00 177.97, 74.40 160.31 C 84.80 142.66, 95.20 119.11, 105.60 132.06 C 116.00 145.01, 126.40 220.34, 136.80 238.00 C 147.20 255.66, 157.60 245.06, 168.00 238.00 C 178.40 230.94, 188.80 207.40, 199.20 195.62 C 209.60 183.85, 220.00 162.67, 230.40 167.38 C 240.80 172.08, 251.20 225.05, 261.60 223.88 C 272.00 222.70, 282.40 169.73, 292.80 160.31 C 303.20 150.90, 313.60 154.43, 324.00 167.38 C 334.40 180.32, 344.80 243.89, 355.20 238.00 C 365.60 232.11, 376.00 142.66, 386.40 132.06 C 396.80 121.47, 407.20 172.08, 417.60 174.44 C 428.00 176.79, 438.40 154.43, 448.80 146.19 C 459.20 137.95, 469.60 113.23, 480.00 125.00 C 490.40 136.77, 500.80 197.98, 511.20 216.81 C 521.60 235.65, 532.00 235.65, 542.40 238.00 C 552.80 240.35, 563.20 230.94, 573.60 230.94 C 584.00 230.94, 594.40 239.18, 604.80 238.00 C 615.20 236.82, 625.60 227.41, 636.00 223.88 C 646.40 220.34, 656.80 214.46, 667.20 216.81 C 677.60 219.17, 688.00 234.47, 698.40 238.00 C 708.80 241.53, 719.20 243.89, 729.60 238.00 C 740.00 232.11, 750.40 213.28, 760.80 202.69 C 771.20 192.09, 781.60 168.55, 792.00 174.44 C 802.40 180.32, 812.80 229.76, 823.20 238.00 C 833.60 246.24, 844.00 261.54, 854.40 223.88 C 864.80 186.21, 875.20 15.53, 885.60 12.00 C 896.00 8.47, 906.40 182.68, 916.80 202.69 C 927.20 222.70, 942.80 143.83, 948.00 132.06" fill="none" stroke="#0969da" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="12.00" cy="174.44" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 27 Oct 2026
+Contributions: 9
+X coordinate: 0
+Y coordinate: 9
+SVG X: 12.00 viewBox units
+SVG Y: 174.44 viewBox units</title></circle>
+<circle cx="12.00" cy="174.44" r="2.5" fill="#0969da" pointer-events="none"/>
+<circle cx="43.20" cy="238.00" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 28 Oct 2026
+Contributions: 0
+X coordinate: 1
+Y coordinate: 0
+SVG X: 43.20 viewBox units
+SVG Y: 238.00 viewBox units</title></circle>
+<circle cx="43.20" cy="238.00" r="2.5" fill="#0969da" pointer-events="none"/>
+<circle cx="74.40" cy="160.31" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 29 Oct 2026
+Contributions: 11
+X coordinate: 2
+Y coordinate: 11
+SVG X: 74.40 viewBox units
+SVG Y: 160.31 viewBox units</title></circle>
+<circle cx="74.40" cy="160.31" r="2.5" fill="#0969da" pointer-events="none"/>
+<circle cx="105.60" cy="132.06" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 30 Oct 2026
+Contributions: 15
+X coordinate: 3
+Y coordinate: 15
+SVG X: 105.60 viewBox units
+SVG Y: 132.06 viewBox units</title></circle>
+<circle cx="105.60" cy="132.06" r="2.5" fill="#0969da" pointer-events="none"/>
+<circle cx="136.80" cy="238.00" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 31 Oct 2026
+Contributions: 0
+X coordinate: 4
+Y coordinate: 0
+SVG X: 136.80 viewBox units
+SVG Y: 238.00 viewBox units</title></circle>
+<circle cx="136.80" cy="238.00" r="2.5" fill="#0969da" pointer-events="none"/>
+<circle cx="168.00" cy="238.00" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 01 Nov 2026
+Contributions: 0
+X coordinate: 5
+Y coordinate: 0
+SVG X: 168.00 viewBox units
+SVG Y: 238.00 viewBox units</title></circle>
+<circle cx="168.00" cy="238.00" r="2.5" fill="#0969da" pointer-events="none"/>
+<circle cx="199.20" cy="195.62" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 02 Nov 2026
+Contributions: 6
+X coordinate: 6
+Y coordinate: 6
+SVG X: 199.20 viewBox units
+SVG Y: 195.62 viewBox units</title></circle>
+<circle cx="199.20" cy="195.62" r="2.5" fill="#0969da" pointer-events="none"/>
+<circle cx="230.40" cy="167.38" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 03 Nov 2026
+Contributions: 10
+X coordinate: 7
+Y coordinate: 10
+SVG X: 230.40 viewBox units
+SVG Y: 167.38 viewBox units</title></circle>
+<circle cx="230.40" cy="167.38" r="2.5" fill="#0969da" pointer-events="none"/>
+<circle cx="261.60" cy="223.88" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 04 Nov 2026
+Contributions: 2
+X coordinate: 8
+Y coordinate: 2
+SVG X: 261.60 viewBox units
+SVG Y: 223.88 viewBox units</title></circle>
+<circle cx="261.60" cy="223.88" r="2.5" fill="#0969da" pointer-events="none"/>
+<circle cx="292.80" cy="160.31" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 05 Nov 2026
+Contributions: 11
+X coordinate: 9
+Y coordinate: 11
+SVG X: 292.80 viewBox units
+SVG Y: 160.31 viewBox units</title></circle>
+<circle cx="292.80" cy="160.31" r="2.5" fill="#0969da" pointer-events="none"/>
+<circle cx="324.00" cy="167.38" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 06 Nov 2026
+Contributions: 10
+X coordinate: 10
+Y coordinate: 10
+SVG X: 324.00 viewBox units
+SVG Y: 167.38 viewBox units</title></circle>
+<circle cx="324.00" cy="167.38" r="2.5" fill="#0969da" pointer-events="none"/>
+<circle cx="355.20" cy="238.00" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 07 Nov 2026
+Contributions: 0
+X coordinate: 11
+Y coordinate: 0
+SVG X: 355.20 viewBox units
+SVG Y: 238.00 viewBox units</title></circle>
+<circle cx="355.20" cy="238.00" r="2.5" fill="#0969da" pointer-events="none"/>
+<circle cx="386.40" cy="132.06" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 08 Nov 2026
+Contributions: 15
+X coordinate: 12
+Y coordinate: 15
+SVG X: 386.40 viewBox units
+SVG Y: 132.06 viewBox units</title></circle>
+<circle cx="386.40" cy="132.06" r="2.5" fill="#0969da" pointer-events="none"/>
+<circle cx="417.60" cy="174.44" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 09 Nov 2026
+Contributions: 9
+X coordinate: 13
+Y coordinate: 9
+SVG X: 417.60 viewBox units
+SVG Y: 174.44 viewBox units</title></circle>
+<circle cx="417.60" cy="174.44" r="2.5" fill="#0969da" pointer-events="none"/>
+<circle cx="448.80" cy="146.19" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 10 Nov 2026
+Contributions: 13
+X coordinate: 14
+Y coordinate: 13
+SVG X: 448.80 viewBox units
+SVG Y: 146.19 viewBox units</title></circle>
+<circle cx="448.80" cy="146.19" r="2.5" fill="#0969da" pointer-events="none"/>
+<circle cx="480.00" cy="125.00" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 11 Nov 2026
+Contributions: 16
+X coordinate: 15
+Y coordinate: 16
+SVG X: 480.00 viewBox units
+SVG Y: 125.00 viewBox units</title></circle>
+<circle cx="480.00" cy="125.00" r="2.5" fill="#0969da" pointer-events="none"/>
+<circle cx="511.20" cy="216.81" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 12 Nov 2026
+Contributions: 3
+X coordinate: 16
+Y coordinate: 3
+SVG X: 511.20 viewBox units
+SVG Y: 216.81 viewBox units</title></circle>
+<circle cx="511.20" cy="216.81" r="2.5" fill="#0969da" pointer-events="none"/>
+<circle cx="542.40" cy="238.00" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 13 Nov 2026
+Contributions: 0
+X coordinate: 17
+Y coordinate: 0
+SVG X: 542.40 viewBox units
+SVG Y: 238.00 viewBox units</title></circle>
+<circle cx="542.40" cy="238.00" r="2.5" fill="#0969da" pointer-events="none"/>
+<circle cx="573.60" cy="230.94" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 14 Nov 2026
+Contributions: 1
+X coordinate: 18
+Y coordinate: 1
+SVG X: 573.60 viewBox units
+SVG Y: 230.94 viewBox units</title></circle>
+<circle cx="573.60" cy="230.94" r="2.5" fill="#0969da" pointer-events="none"/>
+<circle cx="604.80" cy="238.00" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 15 Nov 2026
+Contributions: 0
+X coordinate: 19
+Y coordinate: 0
+SVG X: 604.80 viewBox units
+SVG Y: 238.00 viewBox units</title></circle>
+<circle cx="604.80" cy="238.00" r="2.5" fill="#0969da" pointer-events="none"/>
+<circle cx="636.00" cy="223.88" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 16 Nov 2026
+Contributions: 2
+X coordinate: 20
+Y coordinate: 2
+SVG X: 636.00 viewBox units
+SVG Y: 223.88 viewBox units</title></circle>
+<circle cx="636.00" cy="223.88" r="2.5" fill="#0969da" pointer-events="none"/>
+<circle cx="667.20" cy="216.81" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 17 Nov 2026
+Contributions: 3
+X coordinate: 21
+Y coordinate: 3
+SVG X: 667.20 viewBox units
+SVG Y: 216.81 viewBox units</title></circle>
+<circle cx="667.20" cy="216.81" r="2.5" fill="#0969da" pointer-events="none"/>
+<circle cx="698.40" cy="238.00" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 18 Nov 2026
+Contributions: 0
+X coordinate: 22
+Y coordinate: 0
+SVG X: 698.40 viewBox units
+SVG Y: 238.00 viewBox units</title></circle>
+<circle cx="698.40" cy="238.00" r="2.5" fill="#0969da" pointer-events="none"/>
+<circle cx="729.60" cy="238.00" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 19 Nov 2026
+Contributions: 0
+X coordinate: 23
+Y coordinate: 0
+SVG X: 729.60 viewBox units
+SVG Y: 238.00 viewBox units</title></circle>
+<circle cx="729.60" cy="238.00" r="2.5" fill="#0969da" pointer-events="none"/>
+<circle cx="760.80" cy="202.69" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 20 Nov 2026
+Contributions: 5
+X coordinate: 24
+Y coordinate: 5
+SVG X: 760.80 viewBox units
+SVG Y: 202.69 viewBox units</title></circle>
+<circle cx="760.80" cy="202.69" r="2.5" fill="#0969da" pointer-events="none"/>
+<circle cx="792.00" cy="174.44" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 21 Nov 2026
+Contributions: 9
+X coordinate: 25
+Y coordinate: 9
+SVG X: 792.00 viewBox units
+SVG Y: 174.44 viewBox units</title></circle>
+<circle cx="792.00" cy="174.44" r="2.5" fill="#0969da" pointer-events="none"/>
+<circle cx="823.20" cy="238.00" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 22 Nov 2026
+Contributions: 0
+X coordinate: 26
+Y coordinate: 0
+SVG X: 823.20 viewBox units
+SVG Y: 238.00 viewBox units</title></circle>
+<circle cx="823.20" cy="238.00" r="2.5" fill="#0969da" pointer-events="none"/>
+<circle cx="854.40" cy="223.88" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 23 Nov 2026
+Contributions: 2
+X coordinate: 27
+Y coordinate: 2
+SVG X: 854.40 viewBox units
+SVG Y: 223.88 viewBox units</title></circle>
+<circle cx="854.40" cy="223.88" r="2.5" fill="#0969da" pointer-events="none"/>
+<circle cx="885.60" cy="12.00" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 24 Nov 2026
+Contributions: 32
+X coordinate: 28
+Y coordinate: 32
+SVG X: 885.60 viewBox units
+SVG Y: 12.00 viewBox units</title></circle>
+<circle cx="885.60" cy="12.00" r="2.5" fill="#0969da" pointer-events="none"/>
+<circle cx="916.80" cy="202.69" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 25 Nov 2026
+Contributions: 5
+X coordinate: 29
+Y coordinate: 5
+SVG X: 916.80 viewBox units
+SVG Y: 202.69 viewBox units</title></circle>
+<circle cx="916.80" cy="202.69" r="2.5" fill="#0969da" pointer-events="none"/>
+<circle cx="948.00" cy="132.06" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 26 Nov 2026
+Contributions: 15
+X coordinate: 30
+Y coordinate: 15
+SVG X: 948.00 viewBox units
+SVG Y: 132.06 viewBox units</title></circle>
+<circle cx="948.00" cy="132.06" r="2.5" fill="#0969da" pointer-events="none"/>
 </svg>
