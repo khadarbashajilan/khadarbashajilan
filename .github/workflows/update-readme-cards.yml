@@ -9,8 +9,6 @@ on:
 permissions:
   contents: write
 
-# Prevent multiple instances of this workflow
-# from modifying the same branch simultaneously.
 concurrency:
   group: update-readme-cards-${{ github.ref }}
   cancel-in-progress: false
@@ -24,15 +22,15 @@ jobs:
       # CHECKOUT
       # ==========================================
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
         with:
           fetch-depth: 0
-          persist-credentials: true
+          persist-credentials: false
 
       # ==========================================
-      # CONTRIBUTION CALENDAR
+      # CONTRIBUTION GRAPH
       # ==========================================
-      - name: Generate contribution calendar
+      - name: Generate contribution graph
         env:
           STATS_TOKEN: ${{ secrets.STATS_TOKEN }}
           GITHUB_USERNAME: ${{ github.repository_owner }}
@@ -43,7 +41,7 @@ jobs:
       # STREAK CARD - DARK
       # ==========================================
       - name: Streak card (dark)
-        uses: DenverCoder1/github-readme-streak-stats@v1
+        uses: DenverCoder1/github-readme-streak-stats@125aaaf200620410446ebfa51897fca3607e04fd
         with:
           options: "user=${{ github.repository_owner }}&theme=react&hide_border=true&background=0D1117&stroke=21262D&ring=58A6FF&fire=58A6FF&currStreakNum=F0F6FC&sideNums=C9D1D9&currStreakLabel=8B949E&sideLabels=8B949E&dates=6E7681&border_radius=12"
           path: profile/streak-dark.svg
@@ -53,7 +51,7 @@ jobs:
       # STREAK CARD - LIGHT
       # ==========================================
       - name: Streak card (light)
-        uses: DenverCoder1/github-readme-streak-stats@v1
+        uses: DenverCoder1/github-readme-streak-stats@125aaaf200620410446ebfa51897fca3607e04fd
         with:
           options: "user=${{ github.repository_owner }}&theme=default&hide_border=true&border_radius=12&ring=0969DA&fire=0969DA&currStreakLabel=57606A"
           path: profile/streak.svg
@@ -63,7 +61,7 @@ jobs:
       # TOP LANGUAGES - DARK
       # ==========================================
       - name: Languages card (dark)
-        uses: stats-organization/github-readme-stats-action@v2
+        uses: stats-organization/github-readme-stats-action@2c498845f71017821efaad14293ebc736156ef21
         with:
           card: top-langs
           options: "username=${{ github.repository_owner }}&layout=compact&theme=react&hide_border=true&hide_title=true&langs_count=20&bg_color=0d1117&text_color=c9d1d9&border_radius=12&card_width=495"
@@ -75,7 +73,7 @@ jobs:
       # TOP LANGUAGES - LIGHT
       # ==========================================
       - name: Languages card (light)
-        uses: stats-organization/github-readme-stats-action@v2
+        uses: stats-organization/github-readme-stats-action@2c498845f71017821efaad14293ebc736156ef21
         with:
           card: top-langs
           options: "username=${{ github.repository_owner }}&layout=compact&theme=default&hide_border=true&hide_title=true&langs_count=20&border_radius=12&card_width=495"
@@ -84,12 +82,13 @@ jobs:
           fail_on_error: true
 
       # ==========================================
-      # COMMIT AND PUSH GENERATED CARDS
+      # COMMIT AND PUSH
       # ==========================================
       - name: Commit and push cards
         shell: bash
         env:
           BRANCH_NAME: ${{ github.ref_name }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
 
@@ -97,40 +96,56 @@ jobs:
           git config user.email \
             "41898282+github-actions[bot]@users.noreply.github.com"
 
-          # Stage generated files only
+          # Stage generated SVG files only.
           git add profile/*.svg
 
           if git diff --cached --quiet; then
-            echo "No changes detected. Skipping commit."
+            echo "No changes detected."
             exit 0
           fi
 
           git commit -m "Update README cards"
 
-          # Synchronize with remote and retry if another
-          # process pushes while this workflow is running.
+          # Retry the entire synchronization process.
           for attempt in 1 2 3 4 5; do
+            echo "================================"
+            echo "Synchronization attempt: $attempt/5"
+            echo "================================"
 
-            echo "--------------------------------"
-            echo "Push attempt: $attempt"
-            echo "--------------------------------"
+            # FETCH
+            if ! git fetch origin "$BRANCH_NAME"; then
+              echo "Fetch failed."
+              sleep $((attempt * 3))
+              continue
+            fi
 
-            git fetch origin "$BRANCH_NAME"
+            # REBASE
+            if ! git rebase -X theirs "origin/$BRANCH_NAME"; then
+              echo "Rebase failed. Aborting rebase."
 
-            # Rebase our generated cards onto the latest
-            # remote branch. Prefer newly generated SVGs
-            # if the same SVG was modified remotely.
-            git rebase -X theirs "origin/$BRANCH_NAME"
+              git rebase --abort || true
 
-            if git push origin "HEAD:$BRANCH_NAME"; then
+              sleep $((attempt * 3))
+              continue
+            fi
+
+            # PUSH
+            AUTH_HEADER="$(
+              printf 'x-access-token:%s' "$GH_TOKEN" |
+              base64 -w 0
+            )"
+
+            if git \
+              -c "http.https://github.com/.extraheader=AUTHORIZATION: basic $AUTH_HEADER" \
+              push origin "HEAD:$BRANCH_NAME"; then
+
               echo "Successfully updated README cards."
               exit 0
             fi
 
-            echo "Push rejected. Synchronizing again..."
-            sleep 3
-
+            echo "Push failed or remote changed."
+            sleep $((attempt * 3))
           done
 
-          echo "ERROR: Unable to push after 5 attempts."
+          echo "ERROR: Synchronization failed after 5 attempts."
           exit 1
