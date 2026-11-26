@@ -1,8 +1,6 @@
 
 <div align="center">
 
-  <h3>Last 31 Days of Contributions</h3>
-
   <!-- GitHub contribution calendar -->
   <picture>
     <source
@@ -18,10 +16,7 @@
   </picture>
 
   <sub>
-    Hover for date, count and X/Y coordinates:
-    <a href="https://raw.githubusercontent.com/khadarbashajilan/khadarbashajilan/main/profile/contributions-dark.svg">dark</a>
-    &middot;
-    <a href="https://raw.githubusercontent.com/khadarbashajilan/khadarbashajilan/main/profile/contributions-light.svg">light</a>
+    Last 31 Days of Contributions
   </sub>
 
   <br/>
