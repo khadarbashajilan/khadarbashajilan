@@ -9,7 +9,8 @@ on:
 permissions:
   contents: write
 
-# Prevent overlapping workflow runs
+# Prevent multiple instances of this workflow
+# from modifying the same branch simultaneously.
 concurrency:
   group: update-readme-cards-${{ github.ref }}
   cancel-in-progress: false
@@ -19,11 +20,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # ==========================================
+      # CHECKOUT
+      # ==========================================
       - name: Checkout repository
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          persist-credentials: true
 
       # ==========================================
-      # CONTRIBUTION CALENDAR (MIDNIGHT BLUE)
+      # CONTRIBUTION CALENDAR
       # ==========================================
       - name: Generate contribution calendar
         env:
@@ -33,7 +40,7 @@ jobs:
           python3 .github/scripts/generate_contribution_calendar.py
 
       # ==========================================
-      # CONTRIBUTION STREAK - DARK
+      # STREAK CARD - DARK
       # ==========================================
       - name: Streak card (dark)
         uses: DenverCoder1/github-readme-streak-stats@v1
@@ -43,7 +50,7 @@ jobs:
           token: ${{ secrets.STATS_TOKEN }}
 
       # ==========================================
-      # CONTRIBUTION STREAK - LIGHT
+      # STREAK CARD - LIGHT
       # ==========================================
       - name: Streak card (light)
         uses: DenverCoder1/github-readme-streak-stats@v1
@@ -77,33 +84,53 @@ jobs:
           fail_on_error: true
 
       # ==========================================
-      # COMMIT GENERATED CARDS SAFELY
+      # COMMIT AND PUSH GENERATED CARDS
       # ==========================================
-      - name: Commit cards
+      - name: Commit and push cards
+        shell: bash
         env:
           BRANCH_NAME: ${{ github.ref_name }}
         run: |
-          set -e
+          set -euo pipefail
 
           git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
 
-          # Fetch the latest remote branch
-          git fetch origin "$BRANCH_NAME"
-
-          # Move HEAD to latest remote commit.
-          # Keep generated SVG changes in the working tree.
-          git reset --mixed "origin/$BRANCH_NAME"
-
-          # Stage only generated cards
+          # Stage generated files only
           git add profile/*.svg
 
           if git diff --cached --quiet; then
-            echo "No changes to README cards"
+            echo "No changes detected. Skipping commit."
             exit 0
           fi
 
           git commit -m "Update README cards"
 
-          # Push updated cards
-          git push origin "HEAD:$BRANCH_NAME"
+          # Synchronize with remote and retry if another
+          # process pushes while this workflow is running.
+          for attempt in 1 2 3 4 5; do
+
+            echo "--------------------------------"
+            echo "Push attempt: $attempt"
+            echo "--------------------------------"
+
+            git fetch origin "$BRANCH_NAME"
+
+            # Rebase our generated cards onto the latest
+            # remote branch. Prefer newly generated SVGs
+            # if the same SVG was modified remotely.
+            git rebase -X theirs "origin/$BRANCH_NAME"
+
+            if git push origin "HEAD:$BRANCH_NAME"; then
+              echo "Successfully updated README cards."
+              exit 0
+            fi
+
+            echo "Push rejected. Synchronizing again..."
+            sleep 3
+
+          done
+
+          echo "ERROR: Unable to push after 5 attempts."
+          exit 1
