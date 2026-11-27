@@ -1,68 +1,68 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="280" viewBox="0 0 960 280">
 <defs><linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#58a6ff" stop-opacity="0.38"/><stop offset="100%" stop-color="#58a6ff" stop-opacity="0.01"/></linearGradient></defs>
 <rect width="100%" height="100%" rx="12" fill="#0d1117"/>
-<path d="M 12.00 174.44 C 17.20 185.03, 32.80 238.00, 43.20 238.00 C 53.60 235.65, 64.00 177.97, 74.40 160.31 C 84.80 142.66, 95.20 132.06, 105.60 132.06 C 116.00 145.01, 126.40 220.34, 136.80 238.00 C 147.20 238.00, 157.60 238.00, 168.00 238.00 C 178.40 230.94, 188.80 207.40, 199.20 195.62 C 209.60 183.85, 220.00 167.38, 230.40 167.38 C 240.80 172.08, 251.20 223.88, 261.60 223.88 C 272.00 222.70, 282.40 169.73, 292.80 160.31 C 303.20 160.31, 313.60 160.31, 324.00 167.38 C 334.40 180.32, 344.80 238.00, 355.20 238.00 C 365.60 232.11, 376.00 142.66, 386.40 132.06 C 396.80 132.06, 407.20 172.08, 417.60 174.44 C 428.00 174.44, 438.40 154.43, 448.80 146.19 C 459.20 137.95, 469.60 125.00, 480.00 125.00 C 490.40 136.77, 500.80 197.98, 511.20 216.81 C 521.60 235.65, 532.00 235.65, 542.40 238.00 C 552.80 238.00, 563.20 230.94, 573.60 230.94 C 584.00 230.94, 594.40 238.00, 604.80 238.00 C 615.20 236.82, 625.60 227.41, 636.00 223.88 C 646.40 220.34, 656.80 216.81, 667.20 216.81 C 677.60 219.17, 688.00 234.47, 698.40 238.00 C 708.80 238.00, 719.20 238.00, 729.60 238.00 C 740.00 232.11, 750.40 213.28, 760.80 202.69 C 771.20 192.09, 781.60 174.44, 792.00 174.44 C 802.40 180.32, 812.80 229.76, 823.20 238.00 C 833.60 238.00, 844.00 238.00, 854.40 223.88 C 864.80 186.21, 875.20 15.53, 885.60 12.00 C 896.00 12.00, 906.40 182.68, 916.80 202.69 C 927.20 202.69, 942.80 143.83, 948.00 132.06 L 948.00 238 L 12.00 238 Z" fill="url(#areaGradient)" stroke="none"/>
-<path d="M 12.00 174.44 C 17.20 185.03, 32.80 238.00, 43.20 238.00 C 53.60 235.65, 64.00 177.97, 74.40 160.31 C 84.80 142.66, 95.20 132.06, 105.60 132.06 C 116.00 145.01, 126.40 220.34, 136.80 238.00 C 147.20 238.00, 157.60 238.00, 168.00 238.00 C 178.40 230.94, 188.80 207.40, 199.20 195.62 C 209.60 183.85, 220.00 167.38, 230.40 167.38 C 240.80 172.08, 251.20 223.88, 261.60 223.88 C 272.00 222.70, 282.40 169.73, 292.80 160.31 C 303.20 160.31, 313.60 160.31, 324.00 167.38 C 334.40 180.32, 344.80 238.00, 355.20 238.00 C 365.60 232.11, 376.00 142.66, 386.40 132.06 C 396.80 132.06, 407.20 172.08, 417.60 174.44 C 428.00 174.44, 438.40 154.43, 448.80 146.19 C 459.20 137.95, 469.60 125.00, 480.00 125.00 C 490.40 136.77, 500.80 197.98, 511.20 216.81 C 521.60 235.65, 532.00 235.65, 542.40 238.00 C 552.80 238.00, 563.20 230.94, 573.60 230.94 C 584.00 230.94, 594.40 238.00, 604.80 238.00 C 615.20 236.82, 625.60 227.41, 636.00 223.88 C 646.40 220.34, 656.80 216.81, 667.20 216.81 C 677.60 219.17, 688.00 234.47, 698.40 238.00 C 708.80 238.00, 719.20 238.00, 729.60 238.00 C 740.00 232.11, 750.40 213.28, 760.80 202.69 C 771.20 192.09, 781.60 174.44, 792.00 174.44 C 802.40 180.32, 812.80 229.76, 823.20 238.00 C 833.60 238.00, 844.00 238.00, 854.40 223.88 C 864.80 186.21, 875.20 15.53, 885.60 12.00 C 896.00 12.00, 906.40 182.68, 916.80 202.69 C 927.20 202.69, 942.80 143.83, 948.00 132.06" fill="none" stroke="#58a6ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-<circle cx="12.00" cy="174.44" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 27 Oct 2026 | Contributions: 9 | X: 0 | Y: 9 | SVG X: 12.00 | SVG Y: 174.44</title></circle>
-<circle cx="12.00" cy="174.44" r="2.5" fill="#79c0ff" pointer-events="none"/>
-<circle cx="43.20" cy="238.00" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 28 Oct 2026 | Contributions: 0 | X: 1 | Y: 0 | SVG X: 43.20 | SVG Y: 238.00</title></circle>
-<circle cx="43.20" cy="238.00" r="2.5" fill="#79c0ff" pointer-events="none"/>
-<circle cx="74.40" cy="160.31" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 29 Oct 2026 | Contributions: 11 | X: 2 | Y: 11 | SVG X: 74.40 | SVG Y: 160.31</title></circle>
-<circle cx="74.40" cy="160.31" r="2.5" fill="#79c0ff" pointer-events="none"/>
-<circle cx="105.60" cy="132.06" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 30 Oct 2026 | Contributions: 15 | X: 3 | Y: 15 | SVG X: 105.60 | SVG Y: 132.06</title></circle>
-<circle cx="105.60" cy="132.06" r="2.5" fill="#79c0ff" pointer-events="none"/>
-<circle cx="136.80" cy="238.00" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 31 Oct 2026 | Contributions: 0 | X: 4 | Y: 0 | SVG X: 136.80 | SVG Y: 238.00</title></circle>
+<path d="M 12.00 238.00 C 17.20 225.05, 32.80 177.97, 43.20 160.31 C 53.60 142.66, 64.00 132.06, 74.40 132.06 C 84.80 145.01, 95.20 220.34, 105.60 238.00 C 116.00 238.00, 126.40 238.00, 136.80 238.00 C 147.20 230.94, 157.60 207.40, 168.00 195.62 C 178.40 183.85, 188.80 167.38, 199.20 167.38 C 209.60 172.08, 220.00 223.88, 230.40 223.88 C 240.80 222.70, 251.20 169.73, 261.60 160.31 C 272.00 160.31, 282.40 160.31, 292.80 167.38 C 303.20 180.32, 313.60 238.00, 324.00 238.00 C 334.40 232.11, 344.80 142.66, 355.20 132.06 C 365.60 132.06, 376.00 172.08, 386.40 174.44 C 396.80 174.44, 407.20 154.43, 417.60 146.19 C 428.00 137.95, 438.40 125.00, 448.80 125.00 C 459.20 136.77, 469.60 197.98, 480.00 216.81 C 490.40 235.65, 500.80 235.65, 511.20 238.00 C 521.60 238.00, 532.00 230.94, 542.40 230.94 C 552.80 230.94, 563.20 238.00, 573.60 238.00 C 584.00 236.82, 594.40 227.41, 604.80 223.88 C 615.20 220.34, 625.60 216.81, 636.00 216.81 C 646.40 219.17, 656.80 234.47, 667.20 238.00 C 677.60 238.00, 688.00 238.00, 698.40 238.00 C 708.80 232.11, 719.20 213.28, 729.60 202.69 C 740.00 192.09, 750.40 174.44, 760.80 174.44 C 771.20 180.32, 781.60 229.76, 792.00 238.00 C 802.40 238.00, 812.80 238.00, 823.20 223.88 C 833.60 186.21, 844.00 15.53, 854.40 12.00 C 864.80 12.00, 875.20 182.68, 885.60 202.69 C 896.00 202.69, 906.40 133.24, 916.80 132.06 C 927.20 132.06, 942.80 185.03, 948.00 195.62 L 948.00 238 L 12.00 238 Z" fill="url(#areaGradient)" stroke="none"/>
+<path d="M 12.00 238.00 C 17.20 225.05, 32.80 177.97, 43.20 160.31 C 53.60 142.66, 64.00 132.06, 74.40 132.06 C 84.80 145.01, 95.20 220.34, 105.60 238.00 C 116.00 238.00, 126.40 238.00, 136.80 238.00 C 147.20 230.94, 157.60 207.40, 168.00 195.62 C 178.40 183.85, 188.80 167.38, 199.20 167.38 C 209.60 172.08, 220.00 223.88, 230.40 223.88 C 240.80 222.70, 251.20 169.73, 261.60 160.31 C 272.00 160.31, 282.40 160.31, 292.80 167.38 C 303.20 180.32, 313.60 238.00, 324.00 238.00 C 334.40 232.11, 344.80 142.66, 355.20 132.06 C 365.60 132.06, 376.00 172.08, 386.40 174.44 C 396.80 174.44, 407.20 154.43, 417.60 146.19 C 428.00 137.95, 438.40 125.00, 448.80 125.00 C 459.20 136.77, 469.60 197.98, 480.00 216.81 C 490.40 235.65, 500.80 235.65, 511.20 238.00 C 521.60 238.00, 532.00 230.94, 542.40 230.94 C 552.80 230.94, 563.20 238.00, 573.60 238.00 C 584.00 236.82, 594.40 227.41, 604.80 223.88 C 615.20 220.34, 625.60 216.81, 636.00 216.81 C 646.40 219.17, 656.80 234.47, 667.20 238.00 C 677.60 238.00, 688.00 238.00, 698.40 238.00 C 708.80 232.11, 719.20 213.28, 729.60 202.69 C 740.00 192.09, 750.40 174.44, 760.80 174.44 C 771.20 180.32, 781.60 229.76, 792.00 238.00 C 802.40 238.00, 812.80 238.00, 823.20 223.88 C 833.60 186.21, 844.00 15.53, 854.40 12.00 C 864.80 12.00, 875.20 182.68, 885.60 202.69 C 896.00 202.69, 906.40 133.24, 916.80 132.06 C 927.20 132.06, 942.80 185.03, 948.00 195.62" fill="none" stroke="#58a6ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="12.00" cy="238.00" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 28 Oct 2026 | Contributions: 0 | X: 0 | Y: 0 | SVG X: 12.00 | SVG Y: 238.00</title></circle>
+<circle cx="12.00" cy="238.00" r="2.5" fill="#79c0ff" pointer-events="none"/>
+<circle cx="43.20" cy="160.31" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 29 Oct 2026 | Contributions: 11 | X: 1 | Y: 11 | SVG X: 43.20 | SVG Y: 160.31</title></circle>
+<circle cx="43.20" cy="160.31" r="2.5" fill="#79c0ff" pointer-events="none"/>
+<circle cx="74.40" cy="132.06" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 30 Oct 2026 | Contributions: 15 | X: 2 | Y: 15 | SVG X: 74.40 | SVG Y: 132.06</title></circle>
+<circle cx="74.40" cy="132.06" r="2.5" fill="#79c0ff" pointer-events="none"/>
+<circle cx="105.60" cy="238.00" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 31 Oct 2026 | Contributions: 0 | X: 3 | Y: 0 | SVG X: 105.60 | SVG Y: 238.00</title></circle>
+<circle cx="105.60" cy="238.00" r="2.5" fill="#79c0ff" pointer-events="none"/>
+<circle cx="136.80" cy="238.00" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 01 Nov 2026 | Contributions: 0 | X: 4 | Y: 0 | SVG X: 136.80 | SVG Y: 238.00</title></circle>
 <circle cx="136.80" cy="238.00" r="2.5" fill="#79c0ff" pointer-events="none"/>
-<circle cx="168.00" cy="238.00" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 01 Nov 2026 | Contributions: 0 | X: 5 | Y: 0 | SVG X: 168.00 | SVG Y: 238.00</title></circle>
-<circle cx="168.00" cy="238.00" r="2.5" fill="#79c0ff" pointer-events="none"/>
-<circle cx="199.20" cy="195.62" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 02 Nov 2026 | Contributions: 6 | X: 6 | Y: 6 | SVG X: 199.20 | SVG Y: 195.62</title></circle>
-<circle cx="199.20" cy="195.62" r="2.5" fill="#79c0ff" pointer-events="none"/>
-<circle cx="230.40" cy="167.38" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 03 Nov 2026 | Contributions: 10 | X: 7 | Y: 10 | SVG X: 230.40 | SVG Y: 167.38</title></circle>
-<circle cx="230.40" cy="167.38" r="2.5" fill="#79c0ff" pointer-events="none"/>
-<circle cx="261.60" cy="223.88" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 04 Nov 2026 | Contributions: 2 | X: 8 | Y: 2 | SVG X: 261.60 | SVG Y: 223.88</title></circle>
-<circle cx="261.60" cy="223.88" r="2.5" fill="#79c0ff" pointer-events="none"/>
-<circle cx="292.80" cy="160.31" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 05 Nov 2026 | Contributions: 11 | X: 9 | Y: 11 | SVG X: 292.80 | SVG Y: 160.31</title></circle>
-<circle cx="292.80" cy="160.31" r="2.5" fill="#79c0ff" pointer-events="none"/>
-<circle cx="324.00" cy="167.38" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 06 Nov 2026 | Contributions: 10 | X: 10 | Y: 10 | SVG X: 324.00 | SVG Y: 167.38</title></circle>
-<circle cx="324.00" cy="167.38" r="2.5" fill="#79c0ff" pointer-events="none"/>
-<circle cx="355.20" cy="238.00" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 07 Nov 2026 | Contributions: 0 | X: 11 | Y: 0 | SVG X: 355.20 | SVG Y: 238.00</title></circle>
-<circle cx="355.20" cy="238.00" r="2.5" fill="#79c0ff" pointer-events="none"/>
-<circle cx="386.40" cy="132.06" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 08 Nov 2026 | Contributions: 15 | X: 12 | Y: 15 | SVG X: 386.40 | SVG Y: 132.06</title></circle>
-<circle cx="386.40" cy="132.06" r="2.5" fill="#79c0ff" pointer-events="none"/>
-<circle cx="417.60" cy="174.44" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 09 Nov 2026 | Contributions: 9 | X: 13 | Y: 9 | SVG X: 417.60 | SVG Y: 174.44</title></circle>
-<circle cx="417.60" cy="174.44" r="2.5" fill="#79c0ff" pointer-events="none"/>
-<circle cx="448.80" cy="146.19" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 10 Nov 2026 | Contributions: 13 | X: 14 | Y: 13 | SVG X: 448.80 | SVG Y: 146.19</title></circle>
-<circle cx="448.80" cy="146.19" r="2.5" fill="#79c0ff" pointer-events="none"/>
-<circle cx="480.00" cy="125.00" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 11 Nov 2026 | Contributions: 16 | X: 15 | Y: 16 | SVG X: 480.00 | SVG Y: 125.00</title></circle>
-<circle cx="480.00" cy="125.00" r="2.5" fill="#79c0ff" pointer-events="none"/>
-<circle cx="511.20" cy="216.81" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 12 Nov 2026 | Contributions: 3 | X: 16 | Y: 3 | SVG X: 511.20 | SVG Y: 216.81</title></circle>
-<circle cx="511.20" cy="216.81" r="2.5" fill="#79c0ff" pointer-events="none"/>
-<circle cx="542.40" cy="238.00" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 13 Nov 2026 | Contributions: 0 | X: 17 | Y: 0 | SVG X: 542.40 | SVG Y: 238.00</title></circle>
-<circle cx="542.40" cy="238.00" r="2.5" fill="#79c0ff" pointer-events="none"/>
-<circle cx="573.60" cy="230.94" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 14 Nov 2026 | Contributions: 1 | X: 18 | Y: 1 | SVG X: 573.60 | SVG Y: 230.94</title></circle>
-<circle cx="573.60" cy="230.94" r="2.5" fill="#79c0ff" pointer-events="none"/>
-<circle cx="604.80" cy="238.00" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 15 Nov 2026 | Contributions: 0 | X: 19 | Y: 0 | SVG X: 604.80 | SVG Y: 238.00</title></circle>
-<circle cx="604.80" cy="238.00" r="2.5" fill="#79c0ff" pointer-events="none"/>
-<circle cx="636.00" cy="223.88" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 16 Nov 2026 | Contributions: 2 | X: 20 | Y: 2 | SVG X: 636.00 | SVG Y: 223.88</title></circle>
-<circle cx="636.00" cy="223.88" r="2.5" fill="#79c0ff" pointer-events="none"/>
-<circle cx="667.20" cy="216.81" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 17 Nov 2026 | Contributions: 3 | X: 21 | Y: 3 | SVG X: 667.20 | SVG Y: 216.81</title></circle>
-<circle cx="667.20" cy="216.81" r="2.5" fill="#79c0ff" pointer-events="none"/>
-<circle cx="698.40" cy="238.00" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 18 Nov 2026 | Contributions: 0 | X: 22 | Y: 0 | SVG X: 698.40 | SVG Y: 238.00</title></circle>
+<circle cx="168.00" cy="195.62" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 02 Nov 2026 | Contributions: 6 | X: 5 | Y: 6 | SVG X: 168.00 | SVG Y: 195.62</title></circle>
+<circle cx="168.00" cy="195.62" r="2.5" fill="#79c0ff" pointer-events="none"/>
+<circle cx="199.20" cy="167.38" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 03 Nov 2026 | Contributions: 10 | X: 6 | Y: 10 | SVG X: 199.20 | SVG Y: 167.38</title></circle>
+<circle cx="199.20" cy="167.38" r="2.5" fill="#79c0ff" pointer-events="none"/>
+<circle cx="230.40" cy="223.88" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 04 Nov 2026 | Contributions: 2 | X: 7 | Y: 2 | SVG X: 230.40 | SVG Y: 223.88</title></circle>
+<circle cx="230.40" cy="223.88" r="2.5" fill="#79c0ff" pointer-events="none"/>
+<circle cx="261.60" cy="160.31" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 05 Nov 2026 | Contributions: 11 | X: 8 | Y: 11 | SVG X: 261.60 | SVG Y: 160.31</title></circle>
+<circle cx="261.60" cy="160.31" r="2.5" fill="#79c0ff" pointer-events="none"/>
+<circle cx="292.80" cy="167.38" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 06 Nov 2026 | Contributions: 10 | X: 9 | Y: 10 | SVG X: 292.80 | SVG Y: 167.38</title></circle>
+<circle cx="292.80" cy="167.38" r="2.5" fill="#79c0ff" pointer-events="none"/>
+<circle cx="324.00" cy="238.00" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 07 Nov 2026 | Contributions: 0 | X: 10 | Y: 0 | SVG X: 324.00 | SVG Y: 238.00</title></circle>
+<circle cx="324.00" cy="238.00" r="2.5" fill="#79c0ff" pointer-events="none"/>
+<circle cx="355.20" cy="132.06" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 08 Nov 2026 | Contributions: 15 | X: 11 | Y: 15 | SVG X: 355.20 | SVG Y: 132.06</title></circle>
+<circle cx="355.20" cy="132.06" r="2.5" fill="#79c0ff" pointer-events="none"/>
+<circle cx="386.40" cy="174.44" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 09 Nov 2026 | Contributions: 9 | X: 12 | Y: 9 | SVG X: 386.40 | SVG Y: 174.44</title></circle>
+<circle cx="386.40" cy="174.44" r="2.5" fill="#79c0ff" pointer-events="none"/>
+<circle cx="417.60" cy="146.19" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 10 Nov 2026 | Contributions: 13 | X: 13 | Y: 13 | SVG X: 417.60 | SVG Y: 146.19</title></circle>
+<circle cx="417.60" cy="146.19" r="2.5" fill="#79c0ff" pointer-events="none"/>
+<circle cx="448.80" cy="125.00" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 11 Nov 2026 | Contributions: 16 | X: 14 | Y: 16 | SVG X: 448.80 | SVG Y: 125.00</title></circle>
+<circle cx="448.80" cy="125.00" r="2.5" fill="#79c0ff" pointer-events="none"/>
+<circle cx="480.00" cy="216.81" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 12 Nov 2026 | Contributions: 3 | X: 15 | Y: 3 | SVG X: 480.00 | SVG Y: 216.81</title></circle>
+<circle cx="480.00" cy="216.81" r="2.5" fill="#79c0ff" pointer-events="none"/>
+<circle cx="511.20" cy="238.00" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 13 Nov 2026 | Contributions: 0 | X: 16 | Y: 0 | SVG X: 511.20 | SVG Y: 238.00</title></circle>
+<circle cx="511.20" cy="238.00" r="2.5" fill="#79c0ff" pointer-events="none"/>
+<circle cx="542.40" cy="230.94" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 14 Nov 2026 | Contributions: 1 | X: 17 | Y: 1 | SVG X: 542.40 | SVG Y: 230.94</title></circle>
+<circle cx="542.40" cy="230.94" r="2.5" fill="#79c0ff" pointer-events="none"/>
+<circle cx="573.60" cy="238.00" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 15 Nov 2026 | Contributions: 0 | X: 18 | Y: 0 | SVG X: 573.60 | SVG Y: 238.00</title></circle>
+<circle cx="573.60" cy="238.00" r="2.5" fill="#79c0ff" pointer-events="none"/>
+<circle cx="604.80" cy="223.88" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 16 Nov 2026 | Contributions: 2 | X: 19 | Y: 2 | SVG X: 604.80 | SVG Y: 223.88</title></circle>
+<circle cx="604.80" cy="223.88" r="2.5" fill="#79c0ff" pointer-events="none"/>
+<circle cx="636.00" cy="216.81" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 17 Nov 2026 | Contributions: 3 | X: 20 | Y: 3 | SVG X: 636.00 | SVG Y: 216.81</title></circle>
+<circle cx="636.00" cy="216.81" r="2.5" fill="#79c0ff" pointer-events="none"/>
+<circle cx="667.20" cy="238.00" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 18 Nov 2026 | Contributions: 0 | X: 21 | Y: 0 | SVG X: 667.20 | SVG Y: 238.00</title></circle>
+<circle cx="667.20" cy="238.00" r="2.5" fill="#79c0ff" pointer-events="none"/>
+<circle cx="698.40" cy="238.00" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 19 Nov 2026 | Contributions: 0 | X: 22 | Y: 0 | SVG X: 698.40 | SVG Y: 238.00</title></circle>
 <circle cx="698.40" cy="238.00" r="2.5" fill="#79c0ff" pointer-events="none"/>
-<circle cx="729.60" cy="238.00" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 19 Nov 2026 | Contributions: 0 | X: 23 | Y: 0 | SVG X: 729.60 | SVG Y: 238.00</title></circle>
-<circle cx="729.60" cy="238.00" r="2.5" fill="#79c0ff" pointer-events="none"/>
-<circle cx="760.80" cy="202.69" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 20 Nov 2026 | Contributions: 5 | X: 24 | Y: 5 | SVG X: 760.80 | SVG Y: 202.69</title></circle>
-<circle cx="760.80" cy="202.69" r="2.5" fill="#79c0ff" pointer-events="none"/>
-<circle cx="792.00" cy="174.44" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 21 Nov 2026 | Contributions: 9 | X: 25 | Y: 9 | SVG X: 792.00 | SVG Y: 174.44</title></circle>
-<circle cx="792.00" cy="174.44" r="2.5" fill="#79c0ff" pointer-events="none"/>
-<circle cx="823.20" cy="238.00" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 22 Nov 2026 | Contributions: 0 | X: 26 | Y: 0 | SVG X: 823.20 | SVG Y: 238.00</title></circle>
-<circle cx="823.20" cy="238.00" r="2.5" fill="#79c0ff" pointer-events="none"/>
-<circle cx="854.40" cy="223.88" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 23 Nov 2026 | Contributions: 2 | X: 27 | Y: 2 | SVG X: 854.40 | SVG Y: 223.88</title></circle>
-<circle cx="854.40" cy="223.88" r="2.5" fill="#79c0ff" pointer-events="none"/>
-<circle cx="885.60" cy="12.00" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 24 Nov 2026 | Contributions: 32 | X: 28 | Y: 32 | SVG X: 885.60 | SVG Y: 12.00</title></circle>
-<circle cx="885.60" cy="12.00" r="2.5" fill="#79c0ff" pointer-events="none"/>
-<circle cx="916.80" cy="202.69" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 25 Nov 2026 | Contributions: 5 | X: 29 | Y: 5 | SVG X: 916.80 | SVG Y: 202.69</title></circle>
-<circle cx="916.80" cy="202.69" r="2.5" fill="#79c0ff" pointer-events="none"/>
-<circle cx="948.00" cy="132.06" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 26 Nov 2026 | Contributions: 15 | X: 30 | Y: 15 | SVG X: 948.00 | SVG Y: 132.06</title></circle>
-<circle cx="948.00" cy="132.06" r="2.5" fill="#79c0ff" pointer-events="none"/>
+<circle cx="729.60" cy="202.69" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 20 Nov 2026 | Contributions: 5 | X: 23 | Y: 5 | SVG X: 729.60 | SVG Y: 202.69</title></circle>
+<circle cx="729.60" cy="202.69" r="2.5" fill="#79c0ff" pointer-events="none"/>
+<circle cx="760.80" cy="174.44" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 21 Nov 2026 | Contributions: 9 | X: 24 | Y: 9 | SVG X: 760.80 | SVG Y: 174.44</title></circle>
+<circle cx="760.80" cy="174.44" r="2.5" fill="#79c0ff" pointer-events="none"/>
+<circle cx="792.00" cy="238.00" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 22 Nov 2026 | Contributions: 0 | X: 25 | Y: 0 | SVG X: 792.00 | SVG Y: 238.00</title></circle>
+<circle cx="792.00" cy="238.00" r="2.5" fill="#79c0ff" pointer-events="none"/>
+<circle cx="823.20" cy="223.88" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 23 Nov 2026 | Contributions: 2 | X: 26 | Y: 2 | SVG X: 823.20 | SVG Y: 223.88</title></circle>
+<circle cx="823.20" cy="223.88" r="2.5" fill="#79c0ff" pointer-events="none"/>
+<circle cx="854.40" cy="12.00" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 24 Nov 2026 | Contributions: 32 | X: 27 | Y: 32 | SVG X: 854.40 | SVG Y: 12.00</title></circle>
+<circle cx="854.40" cy="12.00" r="2.5" fill="#79c0ff" pointer-events="none"/>
+<circle cx="885.60" cy="202.69" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 25 Nov 2026 | Contributions: 5 | X: 28 | Y: 5 | SVG X: 885.60 | SVG Y: 202.69</title></circle>
+<circle cx="885.60" cy="202.69" r="2.5" fill="#79c0ff" pointer-events="none"/>
+<circle cx="916.80" cy="132.06" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 26 Nov 2026 | Contributions: 15 | X: 29 | Y: 15 | SVG X: 916.80 | SVG Y: 132.06</title></circle>
+<circle cx="916.80" cy="132.06" r="2.5" fill="#79c0ff" pointer-events="none"/>
+<circle cx="948.00" cy="195.62" r="11" fill="#ffffff" fill-opacity="0" pointer-events="all"><title>Date: 27 Nov 2026 | Contributions: 6 | X: 30 | Y: 6 | SVG X: 948.00 | SVG Y: 195.62</title></circle>
+<circle cx="948.00" cy="195.62" r="2.5" fill="#79c0ff" pointer-events="none"/>
 </svg>
